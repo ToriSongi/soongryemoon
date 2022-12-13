@@ -4,50 +4,88 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title>숭례문</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script>
 		$(document).ready(function(){
-			setInterval(fade,3100);
-			let i=4;
-			function fade(){
-			if(i==0){
-			$("#back>img").fadeIn(1500);
-			i=4;}
-			else{$("#back>img").eq(i).fadeOut(1500);
-			i--;}
-			}
-			
-			
+			setInterval(leftMove,2600);
+			function leftMove(){
+			$("#photo").stop().animate({left:"-800px"}, 1800,function(){$(this).append($(this).children().first());
+			$(this).css("left",0);
+			}); }
 	
+			
+			$("#details li>a").on("mouseenter click", function(){
+					$("#details li>nav").stop().slideUp();
+					$(this).next().stop().slideDown();
+			});
+			$("#details ul").mouseleave(function(){
+				$(this).find().slideUp();
+			});
+		
+			$(".last").on("blur mouseleave",function(){
+				$(this).parent().slideUp();});
+			
 			
 			
 			});///////end
 		</script>
 		<style>
 		* {margin:0; padding:0; box-sizing:border-box;}
+		@font-face {
+							font-family: 'ChosunGs';
+							src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+							font-weight: normal;
+							font-style: normal;
+						}
 		html, body{font:16pt/120% 'Nanum Gothic', sans-serif; }
 		/*img{max-width:100%;}*/
-		a{text-decoration:none; color:white;}
+		a{text-decoration:none; color:black;}
 		
-		#layout{width:800px; margin:auto; }
-		header{background:url("images/nav_bg.png"); height:67px;}
+		#layout{width:800px; margin:auto; position:relative;}
+		header{background:url("images/nav_bg.png"); height:67px; }
 		.flower{margin-left:50px; margin-top:5px;}
-		.menu{float:right; margin-right:30px; margin-top:13px;}
+		.menu{float:right; margin-right:30px; margin-top:15px;}
 		
-		#big_im{width:800px; overflow:hidden;  position:relative; height:500px;}
+		
+		header>div {position:absolute; z-index:1; height:150%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6);}
+		#details {position:absolute; color:white; font-family:"ChosunGs"; background:#005838; width:650px; height:150%; top:0; right:0; overflow:hidden;}
+		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, -200px);}
+		
+		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:50px;}
+		#details	li>a{border-bottom:2px solid #337247; display:block; padding:40px 20px 15px 20px; font-size:23pt;}
+		#details a {color:white; display:block;  }
+		#details nav {background:#1c3a25;  font-size:20pt; display:none;}
+		#details nav a{color:#ffc554; display:block;  padding:20px 20px; }
+		#details nav a:not(:last-child){border-bottom:1px dotted #337247;}
+		#details li span {margin-bottom:15px; float:right; font-size:2.2rem;}
+		#details>img {width:650px; opacity:0.3;}
+		#details>img:last-of-type{position:fixed; bottom:0;}
+
+		
+		
+		#big_im{width:800px; overflow:hidden;   position:relative; height:600px;}
 		#big_im img:not(first-child){position:absolute;}
-		.move{width:900px; animation:move 2s 1 linear; transform:translate(-20px,-70px);}
+		.move{width:900px; animation:move 2s 1 linear; transform:translate(-10px, 0px);}
 		@keyframes move{
-		from{transform:translate(-140px,-70px);} 
-		to{transform:translate(-20px,-70px);}
+		from{transform:translate(-100px,0px);} 
+		to{transform:translate(-10px,0px);}
 		}
 		
 		#big_im img:not(:first-child){max-width:100%;}
-		.charac{margin-left:690px; margin-top:300px;}
+		.charac{margin-left:690px; margin-top:390px;}
 		
-		main{background:url("images/1page_bg.jpg"); height:905px; font-family:"Gungsuh", cursive;}
-		main p{ padding:65px 67px; font-size:18pt; font-weight:bold; line-height:130%;}
+		main{background:url("images/1page_bg.jpg"); height:905px; font-family:"ChosunGs"; position:relative; overflow:hidden;}
+		main>img{ padding:65px 60px 40px 60px; margin-left:20px; font-size:18pt; width:550px;}
+		#photo {width:2400px; display:flex; left:-800px; position:relative; }
+		#photo img{width:800px;  }
+		main>a{font-size:14pt; float:right; margin-right:10px; padding-top:10px; font-weight:bold;}
+		main>section {display:flex; margin:auto; margin:78px 0 0px 55px; background:url("images/notice_bg.png"); height:89px;  width:690px; padding:40px 0px 0 60px;}
+		section h3 {flex:0.7; border:0px solid red;}
+		section p{border:0px solid red;}
 		
+		#floor{display:flex; align-items:center; margin:50px 0 0 70px; font-size:15pt; }
+		#floor select{margin-left:40px; padding:6px 10px; }
 		
 		</style>
 	</head>
@@ -56,6 +94,40 @@
 			<header>
 				<a href="index.html"><img src="images/flower_icon.png" alt="꽃문양" class="flower"></a>
 				<img src="images/menu_icon.png" alt="상세메뉴아이콘" class="menu">
+				<div>
+					<nav id="details">
+						<img src="images/detail_up.png" alt="상세메뉴상단문양">
+						<button type="button">X</button>
+						<ul>
+							<li>
+								<a href="#">숭례문 이야기 <span class="material-symbols-rounded">expand_more</span></a>
+								<nav>
+									<a href="#">숭례문 역사</a>
+									<a href="#">사진으로 보는 숭례문 역사</a>
+									<a href="#">숭례문 사진 보기</a>
+								</nav>
+							</li>
+							<li>
+								<a href="#">사대문 이야기</a>							
+							</li>
+							<li>
+								<a href="#">숭례문 관광 <span class="material-symbols-rounded">expand_more</span></a>
+								<nav>
+									<a href="#">행사 안내</a>
+									<a href="#">주변 관광 안내</a>
+								</nav>
+							</li>
+							<li>
+								<a href="#">국보 이야기</a>
+							</li>
+							<li>
+								<a href="#" class="last">오시는 길</a>
+							</li>
+						</ul>
+						<img src="images/detail_down.png" alt="상세메뉴하단문양">
+					</nav>
+				</div>
+				
 			</header>
 			<div id="big_im">
 				<img src="images/index_main.jpg" alt="숭례문사진" class="move">
@@ -63,19 +135,31 @@
 				<img src="images/chinese.png" alt="숭례문 한자" class="charac">
 			</div>
 			<main>
-				<p>숭례문은 대한민국의 국보 1호로 지정된 <br>
-						우리나라 문화유산입니다.</p>
+				<img src="images/main_p.png" alt="궁서체 내용">
 				<div id="photo">
-					<img src="images/">
-
-				
+					<img src="images/main_photo1.jpg" alt="숭례문사진1">
+					<img src="images/main_photo2.jpg" alt="숭례문사진2">
+					<img src="images/main_photo3.jpg" alt="숭례문사진3">
 				</div>
-				
+				<a href="menu2_2.html">숭례문 사진 더 보기 ▶</a>
+				<section>
+					<h3>공지사항</h3>
+					<p>4년 만에 다시 돌아온 ‘숭례문 역사 이야기’무료 해설</p>
+				</section>
+				<div id="floor">
+					<p>화요일 부터 일요일: 09:00 ~ 18:00 / 매주 월요일 휴무 <br>
+					주소: 서울특별시 중구 세종대로 40 <br>
+					전화: 02-779-8547</p>
+					<select onchange="if(this.value) {window.open(this.value)}">
+						<option value="#">다른 고궁 보러가기</option>
+						<option value="http://www.royalpalace.go.kr/" >경복궁</option>
+						<option value="http://www.deoksugung.go.kr/">덕수궁</option>
+						<option value="http://www.cdg.go.kr/">창덕궁</option>
+					</select>
+				</div>
 			</main>
 			
-			<footer>
-				
-			</footer>
+			
 		</div>
 	</body>
 </html>
