@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>숭례문</title>
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			
+			$("#details li>a").on("mouseenter click", function(){
+					$("#details li>nav").stop().slideUp();
+					$(this).next().stop().slideDown();
+			});
+			$("#details ul").mouseleave(function(){
+				$(this).find().slideUp();
+			});
+			
+			$(".menu").click(function(){
+			 $("header div").fadeIn();
+			 $("#details").stop().animate({left:"140px"},1000);
+			});
+			
+			$("#details button").click(function(){
+				$("header>div:last-of-type").fadeOut();
+				$("#details").stop().animate({left:"800px"},1000);
+			});
+			
+			const pt1Top=$("#first").offset().top-800;
+			const pt2Top=$("#second").offset().top-700;
+			const pt3Top=$("#third").offset().top-700;
+			const pt4Top=$("#fourth").offset().top-700;
+			const pt5Top=$("#fifth").offset().top-700;
+			const pt6Top=$("#sixth").offset().top-700;
+			const pt7Top=$("#seventh").offset().top-700;
+			const pt8Top=$("#eighth").offset().top-700;
+			let scr=0;
+			
+			$(window).scroll(function(){
+			scr = $(window).scrollTop();
+			
+			if(scr>=pt1Top){
+			$("#first").addClass("act");
+			}
+			if(scr>=pt2Top){
+			$("#second").addClass("act");
+			}
+			if(scr>=pt3Top){
+			$("#third").addClass("act");
+			}
+			if(scr>=pt4Top){
+			$("#fourth").addClass("act");
+			}
+			if(scr>=pt5Top){
+			$("#fifth").addClass("act");
+			}
+			if(scr>=pt6Top){
+			$("#sixth").addClass("act");
+			}
+			if(scr>=pt7Top){
+			$("#seventh").addClass("act");
+			}
+			if(scr>=pt8Top){
+			$("#eighth").addClass("act");
+			}
+			});
+			
+			
+			});///////end
+		</script>
+		<style>
+		* {margin:0; padding:0; box-sizing:border-box;}
+		@font-face {
+							font-family: 'ChosunGs';
+							src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+							font-weight: normal;
+							font-style: normal;
+						}
+		html {scroll-behavior:smooth;}
+		html, body{font:16pt/120% 'Nanum Gothic', sans-serif; }
+		/*img{max-width:100%;}*/
+		a{text-decoration:none; color:black;}
+		
+		#layout{width:800px; margin:auto; position:relative;}
+		header{background:url("images/nav_bg.png"); height:67px; }
+		#upside{display:flex; align-items:center; color:white; font-family:"ChosunGs";  }
+		.flower{margin-left:50px; margin-top:5px;}
+		.menu{float:right; margin:5px 0 10px 350px;}
+		#upside p{margin-left:110px; font-size:20pt;}
+		
+		
+		header>div:last-of-type {position:absolute; z-index:1; height:100%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none; overflow:hidden;}
+		#details {position:absolute; color:white; font-family:"ChosunGs"; background:url("images/menu_bg.jpg"); width:659px; height:1580px; top:0; left:800px; overflow:hidden;}
+		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, 30px);}
+		
+		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:380px;}
+		#details	li>a{border-bottom:2px solid #337247; display:block; padding:40px 20px 15px 20px; font-size:23pt;}
+		#details a {color:white; display:block;  }
+		#details nav {background:#1c3a25;  font-size:20pt; display:none;}
+		#details nav a{color:#ffc554; display:block;  padding:20px 20px; }
+		#details nav a:not(:last-child){border-bottom:1px dotted #337247;}
+		#details li b {margin-bottom:15px; float:right; font-size:1.1rem; font-family: 'Nanum Gothic';}
+		#details>img {width:650px; opacity:0.3;}
+		#details>img:last-of-type{}
+		/*여기까지 픽스*/
+		
+		main{background:url("images/menu1_3_bg.jpg"); width:800px; height:5233px;}
+		#submenu {display:flex; padding:66px 0 50px 67px;  font-family:"ChosunGs"; font-size:1.2rem; }
+		#submenu p{padding:0 10px;}
+		#submenu a:hover{text-decoration:underline;} 
+		.big{font-size:1.3rem; font-weight:bold;}
+		
+		main section{padding:24px 0px; line-height:130%; letter-spacing:0.03em; font-size:19.5pt; overflow:hidden;}
+		main h2{ display:none;}
+		main h4{ font-family:"ChosunGs"; font-size:1.2rem; margin-top:10px;}
+		section>p{padding:10px 0; text-align:justify; font-family:"ChosunGs";}
+		
+		main section img{max-width:100%; }
+		main section img:not(:nth-of-type(1), :nth-of-type(2), :nth-of-type(8)){margin-top:32px;}
+		#first{padding-left:20px; transform:translateX(800px);  transition:1s;}
+		#first.act{transform:translateX(0px);}
+		#second{ transform:translateX(-800px);  transition:1.5s;}
+		#second.act{transform:translateX(0px);}
+		#third{ transform:translateX(800px);  transition:1.5s;}
+		#third.act{transform:translateX(0px);}
+		#fourth{ transform:translateX(-800px);  transition:1.5s;}
+		#fourth.act{transform:translateX(0px);}
+		#fifth{ transform:translateX(800px);  transition:1.5s;}
+		#fifth.act{transform:translateX(0px);}
+		#sixth{ transform:translateX(-800px);  transition:1.5s;}
+		#sixth.act{transform:translateX(0px);}
+		#seventh{ transform:translateX(800px);  transition:1.5s;}
+		#seventh.act{transform:translateX(0px);}
+		#eighth{padding-right:20px; transform:translateX(-800px);  transition:1.5s;}
+		#eighth.act{transform:translateX(0px);}
+		
+		
+		#toTop{height:70px; width:70px; background:#005838; padding:12px 10px 10px 10px; border-radius:50%; position:fixed; right:15px; bottom:15px;  z-index:1; line-height:100%;opacity:0.8;}
+		#toTop p{text-align:center; color:white; font-size:1.1rem;}
+		#toTop p:first-child{font-size:1.8rem;}
+		</style>
+	</head>
+	<body>
+		<div id="layout">
+			<header>
+				<div id="upside">
+					<a href="index.html"><img src="images/flower_icon.png" alt="꽃문양" class="flower"></a>
+					<p>숭례문 이야기</p>
+					<img src="images/menu_icon.png" alt="상세메뉴아이콘" class="menu">
+				</div>	
+				<div>
+					<nav id="details">
+						<button type="button">X</button>
+					<ul>
+							<li>
+								<a href="#">숭례문 이야기 <b>V</b></a>
+								<nav>
+									<a href="menu1_1.html">숭례문 역사</a>
+									<a href="menu1_2.html">사진으로 보는 숭례문 역사</a>
+									<a href="menu1_3.html">숭례문 사진 보기</a>
+								</nav>
+							</li>
+							<li>
+								<a href="menu2.html">사대문 이야기</a>							
+							</li>
+							<li>
+								<a href="#">숭례문 관광 <b>V</b></a>
+								<nav>
+									<a href="menu3_1.html">행사 안내</a>
+									<a href="menu3_2.html">주변 관광 안내</a>
+								</nav>
+							</li>
+							<li>
+								<a href="menu4.html">국보 이야기</a>
+							</li>
+							<li>
+								<a href="menu5.html" class="last">오시는 길</a>
+							</li>
+						</ul>
+					
+					</nav>
+				</div>
+				
+			</header>
+			<main>
+				<div id="submenu">
+					<a href="menu1_1.html" >숭례문 역사</a> <p>|</p><a href="menu1_2.html" >사진으로 보는 숭례문 역사</a><p>|</p><a href="menu1_3.html" class="big">숭례문 사진보기</a>
+				</div>
+				<section>
+					<h2>숭례문 사진</h2>
+						<img src="images/menu1_3_photo1.png" alt="숭례문사진1" id="first">
+						<img src="images/menu1_3_photo2.png" alt="숭례문사진2" id="second">
+						<img src="images/menu1_3_photo3.png" alt="숭례문사진3" id="third">
+						<img src="images/menu1_3_photo4.png" alt="숭례문사진4" id="fourth">
+						<img src="images/menu1_3_photo5.png" alt="숭례문사진5" id="fifth">
+						<img src="images/menu1_3_photo6.png" alt="숭례문사진6" id="sixth">
+						<img src="images/menu1_3_photo7.png" alt="숭례문사진7" id="seventh">
+						<img src="images/menu1_3_photo8.png" alt="숭례문사진8" id="eighth">
+				
+				</section>
+				<a href="#upside" id="toTop">
+					<p>^</p>
+					<p>TOP</p>
+				</a>
+			</main>
+			
+			
+		</div>
+	</body>
+</html>

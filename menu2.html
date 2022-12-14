@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>숭례문</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			
+			$("#details li>a").on("mouseenter click", function(){
+					$("#details li>nav").stop().slideUp();
+					$(this).next().stop().slideDown();
+			});
+			$("#details ul").mouseleave(function(){
+				$(this).find().slideUp();
+			});
+	
+			
+			$(".menu").click(function(){
+			 $("header div").fadeIn();
+			 $("#details").stop().animate({left:"140px"},1000);
+			
+			});
+			
+			$("#details button").click(function(){
+				$("header>div:last-of-type").fadeOut();
+				$("#details").stop().animate({left:"800px"},1000);
+
+			});
+			
+			
+	
+			
+			});///////end
+		</script>
+		<style>
+		* {margin:0; padding:0; box-sizing:border-box;}
+		@font-face {
+							font-family: 'ChosunGs';
+							src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+							font-weight: normal;
+							font-style: normal;
+						}
+		html {scroll-behavior:smooth;}
+		html, body{font:16pt/120% 'Nanum Gothic', sans-serif; }
+		/*img{max-width:100%;}*/
+		a{text-decoration:none; color:black;}
+		
+		#layout{width:800px; margin:auto; position:relative;}
+		header{background:url("images/nav_bg.png"); height:67px; }
+		#upside{display:flex; align-items:center; color:white; font-family:"ChosunGs";  }
+		.flower{margin-left:50px; margin-top:5px;}
+		.menu{float:right; margin:5px 0 10px 350px;}
+		#upside p{margin-left:110px; font-size:20pt;}
+		
+		
+		header>div:last-of-type {position:absolute; z-index:1; height:100%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none; overflow:hidden;}
+		#details {position:absolute; color:white; font-family:"ChosunGs"; background:url("images/menu_bg.jpg"); width:659px; height:1580px; top:0; left:800px; overflow:hidden;}
+		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, 30px);}
+		
+		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:380px;}
+		#details	li>a{border-bottom:2px solid #337247; display:block; padding:40px 20px 15px 20px; font-size:23pt;}
+		#details a {color:white; display:block;  }
+		#details nav {background:#1c3a25;  font-size:20pt; display:none;}
+		#details nav a{color:#ffc554; display:block;  padding:20px 20px; }
+		#details nav a:not(:last-child){border-bottom:1px dotted #337247;}
+		#details li b {margin-bottom:15px; float:right; font-size:1.1rem; font-family: 'Nanum Gothic';}
+		#details>img {width:650px; opacity:0.3;}
+		#details>img:last-of-type{}
+		/*여기까지 픽스*/
+		
+		main{background:url("images/menu2_bg.jpg"); width:800px; height:3486px; margin:auto;}
+		
+		main section{padding:10px 50px; line-height:155%; letter-spacing:0.06em; font-size:18.5pt;}
+		main h2{ font-family:"ChosunGs"; font-size:1.4rem; padding:47px 0 20px 0; transform:translateX(-15px);}
+		main h3{display:none;}
+		section>p{padding:20px 0; text-align:justify;}
+		section+img{width:720px; margin:60px 0 50px 45px;}
+		
+		#gate {width:800px; height:942px; background:url("images/menu2_photo.png"); margin-top:40px; }
+		#gate h2{transform:translateY(-28px);}
+		
+		#small img{width:200px;}
+	
+		.p1{transform:translate(250px, -10px); transition:0.5s; }
+		.p1:hover{transform:translate(270px, 50px) scale(2);}
+		
+		.p2{transform:translate(-210px, 260px); transition:0.5s; }
+		.p2:hover{transform:translate(-100px, 310px) scale(2);}
+		
+		.p3{transform:translate(92px, 260px); transition:0.5s; }
+		.p3:hover{transform:translate(0px, 310px) scale(2);}
+		
+		.p4{transform:translate(250px, 450px); transition:0.5s; }
+		.p4:hover{transform:translate(250px, 400px) scale(2);}
+		
+		#toTop{height:70px; width:70px; background:#005838; padding:12px 10px 10px 10px; border-radius:50%; position:fixed; right:15px; bottom:15px;  z-index:1; line-height:100%; opacity:0.8;}
+		#toTop p{text-align:center; color:white; font-size:1.1rem;}
+		#toTop p:first-child{font-size:1.8rem;}
+		</style>
+	</head>
+	<body>
+		<div id="layout">
+			<header>
+				<div id="upside">
+					<a href="index.html"><img src="images/flower_icon.png" alt="꽃문양" class="flower"></a>
+					<p>숭례문 이야기</p>
+					<img src="images/menu_icon.png" alt="상세메뉴아이콘" class="menu">
+				</div>	
+				<div>
+					<nav id="details">
+						<button type="button">X</button>
+						<ul>
+							<li>
+								<a href="#">숭례문 이야기 <b>V</b></a>
+								<nav>
+									<a href="menu1_1.html">숭례문 역사</a>
+									<a href="menu1_2.html">사진으로 보는 숭례문 역사</a>
+									<a href="menu1_3.html">숭례문 사진 보기</a>
+								</nav>
+							</li>
+							<li>
+								<a href="menu2.html">사대문 이야기</a>							
+							</li>
+							<li>
+								<a href="#">숭례문 관광 <b>V</b></a>
+								<nav>
+									<a href="menu3_1.html">행사 안내</a>
+									<a href="menu3_2.html">주변 관광 안내</a>
+								</nav>
+							</li>
+							<li>
+								<a href="menu4.html">국보 이야기</a>
+							</li>
+							<li>
+								<a href="menu5.html" class="last">오시는 길</a>
+							</li>
+						</ul>
+					
+					</nav>
+				</div>
+				
+			</header>
+			<main>
+				
+			
+				<section>
+				
+					<h2>서울 한양도성, 한양도성의 얼굴, 4대문- 漢陽都城</h2>
+						<p>사대문의 이름은 유가(儒家)에서 말하는 오상(五常), 즉 인(仁)·의(義)·예(禮)·지(智)·신(信)을 오행사상에 따른 방위에 맞추어 명명한 것이다. <br>
+							오행사상에 따르면 ‘인’은 목(木)에 해당하며 방위상으로는 동쪽에 속한다. 그래서 동대문의 이름은 흥인문이 된다. ‘의’는 금(金)이며 서쪽에, ‘예’는 화(火)이며 남쪽에 해당하기 때문에 서대문의 이름이 돈의문, 남대문의 이름이 숭례문이 되었다. 북대문의 경우 오행의 수(水)에 속해 원래 ‘지’가 들어가야 하지만 의미가 상통하는 ‘정’(靖)자로 바꾸어 숙정문이라 하였다. <br>
+							오행의 토(土)는 방위상 중앙이 되고 오상 가운데는 ‘ 신’에 해당하는데, 그렇기 때문에 도성의 중심지에 있는 종각의 이름을 보신각(普信閣)으로 명명했다고 한다. </p>
+				</section>
+				<img src="images/menu2_map.png" alt="사대문위치지도">
+				<section>
+					<h3>사대문 설명</h3>
+					<p>1396년(태조 5) 도성을 축조할 때 정남에 숭례문(崇禮門:지금의 서울 남대문), 정북에 숙청문(肅淸門), 정동에 흥인문(興仁門:지금의 서울 동대문), 정서에 돈의문(敦義門)을 세웠다. 숭례문은 1398년(태조 7)에 창건하여 1448년(세종 30)에 개축하고, 1479년(성종 10) 다시 개축한 것을, 1962년 중수(重修)해서 오늘에 이른다.<br><br>
+
+					숙청문은 축조한 지 18년 만인 1413년(태종 13)에 문을 폐쇄하였다가, 1504년(연산군 10)에 동쪽으로 약간 자리를 옮겨 지었는데, 그때에는 석문만 세우고 문루는 건축하지 않은 것을, 1976년 북악산(北岳山) 일대의 성곽을 복원하연서 문루를 짓고 숙정문(肅靖門)이란 편액을 걸었다.<br><br>
+
+					흥인문은 1396년에 축조했는데, 다른 문과는 달리 옹성(甕城)을 쌓았다. 축조한 지 50여 년이 지난 1451년(문종 1)에 개건하고, 1868년(고종 5)에 개수한 것을 1958년에 보수공사를 하였다. <br>돈의문(서대문)은 도성 축조 때에 현재의 사직동에서 독립문으로 넘어가는 고개에 세운 듯한데, 1413년 풍수지리설에 따라 그 남쪽(옛 서울고등학교 서쪽)으로 옮겨 서전문(西箭門)이라 하였다가, 1422년(세종 4) 다시 그 남쪽(현 서대문 마루턱)에 이건(移建)하여 문의 이름을 도로 돈의문으로 하였다. 1711년(숙종 37) 문루를 개건하였으나, 1915년 일제의 도시계획으로 인해 철거되었다.
+					</p>
+				</section>
+				<div id="gate">
+					<section>
+					<h2>사대문 사진</h2>
+					<div id="small">
+						<img src="images/north_big.png" alt="숙정문 작은사진" class="p1">
+						<img src="images/west_big.png" alt="돈의문 작은사진" class="p2">
+						<img src="images/east_big.png" alt="흥인지문 작은사진" class="p3">
+						<img src="images/south_big.png" alt="숭례문 작은사진" class="p4">
+					
+					</div>
+					</section>
+				</div>
+				
+				<a href="#upside" id="toTop">
+					<p>^</p>
+					<p>TOP</p>
+				</a>
+			</main>
+			
+			
+		</div>
+	</body>
+</html>
