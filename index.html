@@ -26,14 +26,25 @@
 			
 			$(".menu").click(function(){
 			 $("header div").fadeIn();
-			 $("#details").stop().animate({left:"150px"},1500);
+			 $("#details").stop().animate({left:"140px"},1000);
+			
 			});
 			
 			$("#details button").click(function(){
 				$("header div").fadeOut();
-				 $("#details").stop().animate({marginLeft:"10px"},1500);
+				$("#details").stop().animate({left:"800px"},1000);
+
 			});
 			
+			
+			
+			$("#notice").click(function(){
+			 $("#popup").fadeIn();
+			});
+			
+			$("#popup button").click(function(){
+				$("#popup").fadeOut();
+			});
 			
 			
 			});///////end
@@ -56,11 +67,11 @@
 		.menu{float:right; margin-right:30px; margin-top:15px;}
 		
 		
-		header>div {position:absolute; z-index:1; height:150%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none;  overflow:hidden;}
-		#details {position:absolute; color:white; font-family:"ChosunGs"; background:#005838; width:650px; height:100vh; top:0; left:800px; overflow:hidden;}
-		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, -200px);}
+		header>div {position:absolute; z-index:1; height:100%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none;  overflow:hidden;}
+		#details {position:absolute; color:white; font-family:"ChosunGs"; background:url("images/menu_bg.jpg"); width:659px; height:1580px; top:0; left:800px; overflow:hidden;}
+		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, 30px);}
 		
-		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:50px;}
+		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:380px;}
 		#details	li>a{border-bottom:2px solid #337247; display:block; padding:40px 20px 15px 20px; font-size:23pt;}
 		#details a {color:white; display:block;  }
 		#details nav {background:#1c3a25;  font-size:20pt; display:none;}
@@ -88,9 +99,14 @@
 		#photo {width:2400px; display:flex; left:-800px; position:relative; }
 		#photo img{width:800px;  }
 		main>a{font-size:14pt; float:right; margin-right:10px; padding-top:10px; font-weight:bold;}
-		main>section {display:flex; margin:auto; margin:78px 0 0px 55px; background:url("images/notice_bg.png"); height:89px;  width:690px; padding:40px 0px 0 60px;}
-		section h3 {flex:0.7; border:0px solid red;}
-		section p{border:0px solid red;}
+		#notice{display:flex; margin:auto; margin:78px 0 0px 55px; background:url("images/notice_bg1.png"); height:84px;  width:690px; padding:40px 0px 0 60px;}
+		#notice h3 {flex:0.7; border:0px solid red;}
+		#notice p{border:0px solid red;}
+		
+		#popup {position:absolute; z-index:2; top:0px; left:0; background:rgba(0,0,0,0.7); width:100%; height:100%; padding:200px 0;	display:none;	}
+		#popup section{background:url("images/noticepopup_bg.jpg"); margin-top:250px; width:590px; height:1189px; margin:auto; padding:115px 0 0 70px; font-family:"ChosunGs"; font-size:17pt; line-height:150%;}
+		#popup img{width:450px; margin-top:30px;}
+		#popup button{position:absolute; border:none; background:none; font-size:2.2rem; transform:translate(450px, -60px); font-family:"굴림"; font-weight:bold;}
 		
 		#floor{display:flex; align-items:center; margin:50px 0 0 70px; font-size:15pt; }
 		#floor select{margin-left:40px; padding:6px 10px; }
@@ -104,7 +120,6 @@
 				<img src="images/menu_icon.png" alt="상세메뉴아이콘" class="menu">
 				<div>
 					<nav id="details">
-						<img src="images/detail_up.png" alt="상세메뉴상단문양">
 						<button type="button">X</button>
 						<ul>
 							<li>
@@ -132,12 +147,37 @@
 								<a href="#" class="last">오시는 길</a>
 							</li>
 						</ul>
-						<br><br><br><br><br><br><br><br>
-						<img src="images/detail_down.png" alt="상세메뉴하단문양">
+					
 					</nav>
 				</div>
 				
 			</header>
+			<div id="popup">
+					<section >
+					<button type="button">X</button>
+						<h3>공지 사항</h3><br> 
+						<p>등록일: 2022. 10. 20 <br> <br>
+
+							안녕하세요. <br>
+							10월 22일~11월 19일까지 매주 토요일마다  <br>
+							하루 두차례씩 숭례문에서 <br> <br>
+
+							숭례문의 건축적인 아름다움과 의미를 해설사  <br>
+							설명을 들으며 관람할 수 있는 숭례문 무료 해설 <br>
+							프로그램을 진행합니다. <br> <br>
+
+							회당 35분 정도 소요되도록 구성했으며, <br>
+							사전 예약 없이 현장에서 바로 참여할 수 있습니다. <br> <br>
+
+							감사합니다. <br><br>
+
+							◈운영시간: 14:00~14:35, 15:00~15:35 /  <br> &ensp; 회당 약 
+											   35분 소요 <br>
+							◈참여방법: 현장참여, 무료, 예약없음. <br>
+							◈집합장소: 숭례문 정문 종합 안내판</p>
+							<img src="images/popup_photo.jpg" alt="숭례문 팝업사진">
+					</section>
+				</div>
 			<div id="big_im">
 				<img src="images/index_main.jpg" alt="숭례문사진" class="move">
 				<img src="images/photo_gra.png" alt="사진위 그라데이션">
@@ -151,10 +191,11 @@
 					<img src="images/main_photo3.jpg" alt="숭례문사진3">
 				</div>
 				<a href="menu2_2.html">숭례문 사진 더 보기 ▶</a>
-				<section>
+				<section id="notice">
 					<h3>공지사항</h3>
 					<p>4년 만에 다시 돌아온 ‘숭례문 역사 이야기’무료 해설</p>
 				</section>
+				
 				<div id="floor">
 					<p>화요일 부터 일요일: 09:00 ~ 18:00 / 매주 월요일 휴무 <br>
 					주소: 서울특별시 중구 세종대로 40 <br>
