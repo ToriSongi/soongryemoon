@@ -22,9 +22,17 @@
 			$("#details ul").mouseleave(function(){
 				$(this).find().slideUp();
 			});
-		
-			$(".last").on("blur mouseleave",function(){
-				$(this).parent().slideUp();});
+	
+			
+			$(".menu").click(function(){
+			 $("header div").fadeIn();
+			 $("#details").stop().animate({left:"150px"},1500);
+			});
+			
+			$("#details button").click(function(){
+				$("header div").fadeOut();
+				 $("#details").stop().animate({marginLeft:"10px"},1500);
+			});
 			
 			
 			
@@ -48,8 +56,8 @@
 		.menu{float:right; margin-right:30px; margin-top:15px;}
 		
 		
-		header>div {position:absolute; z-index:1; height:150%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6);}
-		#details {position:absolute; color:white; font-family:"ChosunGs"; background:#005838; width:650px; height:150%; top:0; right:0; overflow:hidden;}
+		header>div {position:absolute; z-index:1; height:150%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none;  overflow:hidden;}
+		#details {position:absolute; color:white; font-family:"ChosunGs"; background:#005838; width:650px; height:100vh; top:0; left:800px; overflow:hidden;}
 		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, -200px);}
 		
 		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:50px;}
@@ -58,9 +66,9 @@
 		#details nav {background:#1c3a25;  font-size:20pt; display:none;}
 		#details nav a{color:#ffc554; display:block;  padding:20px 20px; }
 		#details nav a:not(:last-child){border-bottom:1px dotted #337247;}
-		#details li span {margin-bottom:15px; float:right; font-size:2.2rem;}
+		#details li b {margin-bottom:15px; float:right; font-size:1.1rem; font-family: 'Nanum Gothic';}
 		#details>img {width:650px; opacity:0.3;}
-		#details>img:last-of-type{position:fixed; bottom:0;}
+		#details>img:last-of-type{:0;}
 
 		
 		
@@ -100,7 +108,7 @@
 						<button type="button">X</button>
 						<ul>
 							<li>
-								<a href="#">숭례문 이야기 <span class="material-symbols-rounded">expand_more</span></a>
+								<a href="#">숭례문 이야기 <b>V</b></a>
 								<nav>
 									<a href="#">숭례문 역사</a>
 									<a href="#">사진으로 보는 숭례문 역사</a>
@@ -111,7 +119,7 @@
 								<a href="#">사대문 이야기</a>							
 							</li>
 							<li>
-								<a href="#">숭례문 관광 <span class="material-symbols-rounded">expand_more</span></a>
+								<a href="#">숭례문 관광 <b>V</b></a>
 								<nav>
 									<a href="#">행사 안내</a>
 									<a href="#">주변 관광 안내</a>
@@ -124,6 +132,7 @@
 								<a href="#" class="last">오시는 길</a>
 							</li>
 						</ul>
+						<br><br><br><br><br><br><br><br>
 						<img src="images/detail_down.png" alt="상세메뉴하단문양">
 					</nav>
 				</div>
