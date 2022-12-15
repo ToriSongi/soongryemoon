@@ -27,13 +27,13 @@
 			$(".menu").click(function(){
 			 $("header div").fadeIn();
 			 $("#details").stop().animate({left:"140px"},800);
-			
+			 $("body").css("overflow","hidden");
 			});
 			
 			$("#details button").click(function(){
 				$("header>div:last-of-type").fadeOut();
 				$("#details").stop().animate({left:"800px"},1000);
-
+				$("body").css("overflow","auto");
 			});
 			
 			
