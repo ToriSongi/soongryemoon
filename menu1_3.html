@@ -19,7 +19,7 @@
 			
 			$(".menu").click(function(){
 			 $("header div").fadeIn();
-			 $("#details").stop().animate({left:"140px"},1000);
+			 $("#details").stop().animate({left:"140px"},800);
 			});
 			
 			$("#details button").click(function(){
@@ -27,14 +27,14 @@
 				$("#details").stop().animate({left:"800px"},1000);
 			});
 			
-			const pt1Top=$("#first").offset().top-800;
-			const pt2Top=$("#second").offset().top-700;
+			const pt1Top=$("#first").offset().top-1000;
+			const pt2Top=$("#second").offset().top-800;
 			const pt3Top=$("#third").offset().top-700;
 			const pt4Top=$("#fourth").offset().top-700;
 			const pt5Top=$("#fifth").offset().top-700;
 			const pt6Top=$("#sixth").offset().top-700;
 			const pt7Top=$("#seventh").offset().top-700;
-			const pt8Top=$("#eighth").offset().top-700;
+			const pt8Top=$("#eighth").offset().top-2000;
 			let scr=0;
 			
 			$(window).scroll(function(){
