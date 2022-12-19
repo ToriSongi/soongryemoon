@@ -21,13 +21,13 @@
 			$(".menu").click(function(){
 			 $("header div").fadeIn();
 			 $("#details").stop().animate({left:"140px"},800);
-			 $("body").css("overflow","hidden");
+			 //$("body").css("overflow","hidden");
 			});
 			
 			$("#details button").click(function(){
 				$("header>div:last-of-type").fadeOut();
 				$("#details").stop().animate({left:"800px"},1000);
-				$("body").css("overflow","auto");
+				//$("body").css("overflow","auto");
 			});
 			
 			
@@ -48,7 +48,7 @@
 		/*img{max-width:100%;}*/
 		a{text-decoration:none; color:black;}
 		
-		#layout{width:800px; margin:auto; position:relative;}
+		#layout{width:800px; margin:auto; position:relative; overflow:hidden;}
 		header{background:url("images/nav_bg.png"); height:67px; }
 		#upside{display:flex; align-items:center; color:white; font-family:"ChosunGs";  }
 		.flower{margin-left:50px; margin-top:5px;}
@@ -56,7 +56,7 @@
 		#upside p{margin-left:110px; font-size:20pt;}
 		
 		
-		header>div:last-of-type {position:absolute; z-index:1; height:100%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none; overflow:hidden;}
+		header>div:last-of-type {position:absolute; z-index:1; height:100%; width:100%; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none; }
 		#details {position:absolute; color:white; font-family:"ChosunGs"; background:url("images/menu_bg.jpg"); width:659px; height:1580px; top:0; left:800px; overflow:hidden;}
 		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, 30px);}
 		

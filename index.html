@@ -8,9 +8,9 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script>
 		$(document).ready(function(){
-			setInterval(leftMove,2600);
+			setInterval(leftMove,2000);
 			function leftMove(){
-			$("#photo").stop().animate({left:"-800px"}, 1800,function(){$(this).append($(this).children().first());
+			$("#photo").stop().animate({left:"-800px"}, 1400,function(){$(this).append($(this).children().first());
 			$(this).css("left",0);
 			}); }
 	
@@ -62,7 +62,7 @@
 		a{text-decoration:none; color:black;}
 		
 		#layout{width:800px; margin:auto; position:relative;}
-		header{background:url("images/nav_bg.png"); height:67px; }
+		header{background:url("images/nav_bg.png") fixed center/cover; height:67px; }
 		.flower{margin-left:50px; margin-top:5px;}
 		.menu{float:right; margin-right:30px; margin-top:15px;}
 		
