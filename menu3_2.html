@@ -56,11 +56,11 @@
 		#upside p{margin-left:110px; font-size:20pt;}
 		
 		
-		#inside{position:absolute; z-index:3; height:100%; width:100vw; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none; overflow:hidden;}
-		#details {position:absolute; color:white; font-family:"ChosunGs"; background:url("images/menu_bg.jpg"); width:659px; height:1580px; top:0; left:800px; overflow:hidden;}
+		#inside{position:absolute; z-index:1; height:100%; width:100vw; top:0; left:0 ; background:rgba(255,255,255,0.6); display:none; overflow:hidden;}
+		#details {position:absolute; color:white; font-family:"ChosunGs"; background:url("images/menu_bg.jpg"); width:659px; height:1580px; top:0; left:800px; overflow:hidden;  z-index:1;}
 		#details button{border:none; background:none; color:white; font-size:2.2rem; transform:translate(570px, 30px);}
 		
-		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:380px;}
+		#details ul{list-style:none; width:360px; padding:0 10px; margin-left:120px; margin-top:380px;  z-index:1;}
 		#details	li>a{border-bottom:2px solid #337247; display:block; padding:40px 20px 15px 20px; font-size:23pt;}
 		#details a {color:white; display:block;  }
 		#details nav {background:#1c3a25;  font-size:20pt; display:none;}
@@ -92,20 +92,20 @@
 		.mini{width:30px; transform:translateY(4px);}
 		.tour{width:600px; margin-left:45px; margin-top:30px;}
 		
-		/*#cloud{position:absolute; }*/
-		#cloud img:first-child{top:140px; position:absolute; z-index:1; opacity:0.7; width:26%; transform:translateX(800px); animation:move1 6s infinite linear;}
+	
+		#cloud img:first-child{top:140px; position:absolute; opacity:0.7; width:26%; transform:translateX(800px); animation:move1 6s infinite linear;}
 		@keyframes move1{
 		from{transform:translateX(740px);}
 		to{transform:translateX(-150px);}
 		}
 		
-		#cloud img:nth-child(2){top:1600px; position:absolute; z-index:1; animation:move2 7s infinite linear; transform:translateX(800px); animation-delay:0.3s;  opacity:0.4;}
+		#cloud img:nth-child(2){top:1600px; position:absolute; animation:move2 7s infinite linear; transform:translateX(800px); animation-delay:0.3s;  opacity:0.4;}
 		@keyframes move2{
 		from{transform:translateX(-300px);}
 		to{transform:translateX(800px);}
 		}
 		
-		#cloud img:nth-child(3){top:2600px; position:absolute; z-index:1; animation:move3 8s infinite linear; transform:translateX(800px); animation-delay:0.7s;  opacity:0.4;}
+		#cloud img:nth-child(3){top:2600px; position:absolute;  animation:move3 8s infinite linear; transform:translateX(800px); animation-delay:0.7s;  opacity:0.4;}
 		@keyframes move3{
 		from{transform:translateX(740px);}
 		to{transform:translateX(-280px);}
